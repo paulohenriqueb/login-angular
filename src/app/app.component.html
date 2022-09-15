@@ -1,12 +1,22 @@
 <mat-toolbar>
-    <span>Login</span>
-    <div>
-      <button mat-icon-button routerLink="/main/people">
-        <mat-icon class="mat-18">home</mat-icon>
-      </button>
-      <button mat-icon-button routerLink="/main/products">
-        <mat-icon class="mat-18">shop</mat-icon>
-      </button>
-    </div>
+  <span>Login</span>
+  <span class="example-spacer"></span>
+  <div>
+    <button mat-button routerLink="/auth/login">
+      <mat-icon class="mat-18">input</mat-icon>
+      Sign in
+    </button>
+    <button mat-button routerLink="/auth/register">
+      <mat-icon class="mat-18">person_add</mat-icon>
+      Sign up
+    </button>
+    <button mat-icon-button routerLink="/main/people">
+      <mat-icon class="mat-18">home</mat-icon>
+    </button>
+    <button mat-icon-button routerLink="/main/products">
+      <mat-icon class="mat-18">shop</mat-icon>
+    </button>
+  </div>
 </mat-toolbar>
+
 <router-outlet></router-outlet>
