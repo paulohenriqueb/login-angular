@@ -7,11 +7,11 @@ import { Product } from './product';
   providedIn: 'root'
 })
 export class MainService {
-  private readonly base_url: string= 'http://localhost:9000/api';
+  private readonly base_url: string= 'http://localhost:9000';
   constructor(private http: HttpClient) { }
 
   getPeople():Observable<Person[]>{
-    return this.http.get<Person[]>(`${this.base_url}/person`)
+    return this.http.get<Person[]>(`${this.base_url}/person/all`)
       .pipe(
         tap(p=>console.log(p)),
         catchError((e)=>{
@@ -22,7 +22,7 @@ export class MainService {
   }
 
   getProduct():Observable<Product[]>{
-    return this.http.get<Product[]>(`${this.base_url}/product`)
+    return this.http.get<Product[]>(`${this.base_url}/product/all`)
       .pipe(
         tap(pr=>console.log(pr)),
         catchError((e)=>{

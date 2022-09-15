@@ -1,5 +1,5 @@
 <h3>People</h3>
-<div *ngIf="(people$ | async )!.length > 0; else noperson">
+<div *ngIf="( people$ | async ) as people; else noperson">
   <ul>
     <li *ngFor="let p of (people$ | async )$">
       {{p.name }} - {{p.email}}

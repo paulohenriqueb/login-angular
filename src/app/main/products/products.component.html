@@ -1,5 +1,5 @@
 <h3>Products</h3>
-<div *ngIf="(products$ | async)!.length > 0; else noproducts ">
+<div *ngIf="(products$ | async) as product; else noproducts ">
   <ul>
     <li *ngFor="let prod of (products$ | async)">
       {{ prod.name }} - {{ prod.department}} - {{ prod.price }}
