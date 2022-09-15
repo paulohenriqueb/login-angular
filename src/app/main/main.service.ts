@@ -16,7 +16,7 @@ export class MainService {
         tap(p=>console.log(p)),
         catchError((e)=>{
           console.log(e)
-          return throwError(e);
+          return throwError(()=> new Error(e));
         })
       )
   }
@@ -27,7 +27,7 @@ export class MainService {
         tap(pr=>console.log(pr)),
         catchError((e)=>{
           console.log(e);
-          return throwError(e);
+          return throwError(()=> new Error(e));
         })
       )
   }
