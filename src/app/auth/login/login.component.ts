@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
     'email': ['', [Validators.required, Validators.email]],
     'password': ['', [Validators.required, Validators.minLength(6)]],
   })
+
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
