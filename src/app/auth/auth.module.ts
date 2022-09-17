@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { MaterialModule } from '../material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 @NgModule({
@@ -22,4 +23,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule
   ]
 })
-export class AuthModule { }
+export class AuthModule {
+  static forRoot() : ModuleWithProviders<AuthModule> {
+    return {
+      ngModule: AuthModule,
+      providers: [
+        AuthInterceptor
+      ]
+    }
+  }
+}
