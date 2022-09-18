@@ -17,8 +17,8 @@ export class AuthService {
   }
 
   login(credentials:{email: string, password: string}): Observable<User>{
-    console.log(credentials);
-    console.log(`${this.base_url}/login`);
+    // console.log(credentials);
+    // console.log(`${this.base_url}/login`);
     return this.http.post<User>(`${this.base_url}/login`, credentials)
     .pipe(
       tap((u: User)=>{
