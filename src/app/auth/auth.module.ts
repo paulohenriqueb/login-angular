@@ -5,9 +5,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { AuthRoutingModule } from './auth-routing.module';
+import { AuthInterceptor } from './auth.interceptor';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthInterceptor } from './auth.interceptor';
 
 
 @NgModule({
